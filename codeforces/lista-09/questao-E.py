@@ -1,10 +1,13 @@
-palavra = list(input())
-mono = 0
-for i in range(len(palavra)):
-    try:
-        if palavra[i] == palavra[i+1]:
-            mono += 1
-    except:
-        break
+quant = int(input())
+palavra = input()
 
-print(mono)
+def ocorrencias_a(seq):
+    mono = 0
+    pal = []
+    pal = seq.split('b')
+    for i in pal:
+        if len(i) > 1:
+            mono += len(i)
+    return mono
+
+print(ocorrencias_a(palavra))
