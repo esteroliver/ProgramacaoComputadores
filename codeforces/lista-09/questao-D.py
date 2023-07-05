@@ -1,16 +1,15 @@
 mensagem = list(input())
 crib = list(input())
 pas = 0
+quant = len(mensagem) - len(crib) + 1
 
-while True:
+for i in range (quant):
     letras = 0
-    for y in range(len(crib)):
-        if crib[y] != mensagem[y]:
+    for j in range(len(crib)):
+        if crib[j] == mensagem[j]:
             letras += 1
-    if letras == len(crib):
+    if letras == 0:
         pas += 1
-    del(mensagem[0])
-    if len(mensagem) < len(crib):
-        break
-
+    mensagem.remove(mensagem[0])
+    
 print(pas)
