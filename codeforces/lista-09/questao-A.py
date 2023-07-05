@@ -1,20 +1,18 @@
+def maior_ind(lista):
+    maior = lista[0]
+    indice = 0
+    for i in range(len(lista)):
+        if maior <= lista[i]:
+            maior = lista[i]
+            indice = i
+    return indice+1
+
 jogadores, rodadas = map(int,input().split())
 pontos = list(map(int,input().split()))
 quant = len(pontos)
 
-while quant != jogadores:
-    for i in range(len(pontos)):
-        try:
-            pontos[i] += pontos[i+jogadores]
-            pontos[i+jogadores] = 0
-        except:
-            break
-    quant -= 1
+for i in range(jogadores):
+    for j in range(1,rodadas):
+        pontos[i] += pontos[i+j*jogadores]
 
-while pontos.count(max(pontos)) > 1: 
-    indice = pontos.index(max(pontos))
-    pontos[indice] = 0
-
-vencedor = pontos.index(max(pontos)) + 1
-
-print(vencedor)
+print(maior_ind(pontos))
