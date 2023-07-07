@@ -12,7 +12,8 @@ for i in range(jogadores):
     ponto_jogador = int(input())
     pontos.append(ponto_jogador)
 
-while vencedores <= minimo_compet:
+
+while vencedores < minimo_compet:
     maior = max(pontos)
     vencedores += verificar_empates(pontos)
     while pontos.count(maior) > 0:
