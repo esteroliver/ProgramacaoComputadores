@@ -7,22 +7,22 @@ int main(){
     cin >> nome;
     int a, c, g, t, letras;
     letras = nome.size();
-    a = 0;
-    c = 0;
-    g = 0;
-    t = 0;
+    a = 1;
+    c = 1;
+    g = 1;
+    t = 1;
 
     for (int i=0; i<letras; i++){
-        if (nome[i] == 'A'){
+        if (nome[i] == 'A' && nome[i] == nome[i+1]){
             a = a + 1;
         }
-        else if (nome[i] == 'C'){
+        else if (nome[i] == 'C' && nome[i] == nome[i+1]){
             c = c + 1;
         }
-        else if (nome[i] == 'G'){
+        else if (nome[i] == 'G' && nome[i] == nome[i+1]){
             g = g + 1;
         }
-        else if (nome[i] == 'T'){
+        else if (nome[i] == 'T' && nome[i] == nome[i+1]){
             t = t + 1;
         }
     }
