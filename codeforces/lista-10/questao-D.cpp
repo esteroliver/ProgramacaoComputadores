@@ -11,7 +11,7 @@ int main(){
 
   vector<int> valores;
 
-  for (int j=1; j<num; j++){
+  for (int j=1; j<num-1; j++){
     if (numeros[j-1] != numeros[j] && numeros[j+1] != numeros[j]){
       valores.push_back(numeros[j]);
     }
@@ -21,7 +21,7 @@ int main(){
   
   int seq = 0;
 
-  for(int x=1; x<num; x++){
+  for(int x=1; x<num-1; x++){
     for(int k=0; k<(valores.size()); k++){
       if (numeros[x-1] == valores[k] && numeros[x-1] != numeros[x] && numeros[x+1] != numeros[x]) seq = seq + 1;
     }
@@ -30,7 +30,6 @@ int main(){
   if(num == 1){
     seq = 1;
   }
-
 
   cout << seq << '\n';
 }
