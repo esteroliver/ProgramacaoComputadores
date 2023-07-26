@@ -11,7 +11,7 @@ int main(){
 
   vector<int> valores;
 
-  for (int j=1; j<num-1; j++){
+  for (int j=1; j<num; j++){
     if (numeros[j-1] != numeros[j] && numeros[j+1] != numeros[j]){
       valores.push_back(numeros[j]);
     }
@@ -19,12 +19,16 @@ int main(){
     else if (valores.size() == 2) break;
  }
   
-  int seq = 0;
-
+  int seq = 1;
+  int k = 0;
   for(int x=1; x<num-1; x++){
-    for(int k=0; k<(valores.size()); k++){
-      if (numeros[x-1] == valores[k] && numeros[x-1] != numeros[x] && numeros[x+1] != numeros[x]) seq = seq + 1;
+    if (k<valores.size()){
+      if (numeros[x] == valores[k] && numeros[x-1] != numeros[x] && numeros[x+1] != numeros[x]){
+        seq = seq + 1;
+        k = k + 1;
+      }
     }
+    if (x<num) k = 0;
   }
 
   if(num == 1){
