@@ -30,10 +30,6 @@ int main(){
     }
     if (x<num) k = 0;
   }
-
-  if(num == 1){
-    seq = 1;
-  }
-
+  
   cout << seq << '\n';
 }
